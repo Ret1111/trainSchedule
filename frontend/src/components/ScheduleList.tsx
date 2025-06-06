@@ -1,5 +1,5 @@
 import React from 'react';
-import { Schedule } from '../types/schedule';
+import type { Schedule } from '@/types/schedule';
 
 interface ScheduleListProps {
   schedules: Schedule[];
