@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import { FiSearch, FiPlus, FiEdit2, FiTrash2, FiClock, FiMapPin } from 'react-icons/fi';
 import { format } from 'date-fns';
-import { Schedule } from '@/types/schedule';
+import { Schedule } from '../types/schedule';
 import ScheduleList from '@/components/ScheduleList';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
