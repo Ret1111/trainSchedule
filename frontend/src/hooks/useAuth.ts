@@ -20,8 +20,9 @@ const api = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
+    'Accept': 'application/json'
   },
-  withCredentials: false // Changed this to false since we're using token-based auth
+  withCredentials: true
 });
 
 export function useAuth() {

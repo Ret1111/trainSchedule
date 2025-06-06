@@ -8,9 +8,13 @@ async function bootstrap() {
   
   // Enable CORS
   app.enableCors({
-    origin: ['https://train-schedule-lmgc.vercel.app', 'http://localhost:3000'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: [
+      'https://train-schedule-lmgc.vercel.app',
+      'https://train-schedule-lmgc-agva640o7-ret1111s-projects.vercel.app',
+      'http://localhost:3000'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
     credentials: true
   });
   
