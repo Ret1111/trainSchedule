@@ -1,114 +1,134 @@
 # Train Schedule Application
 
-A full-stack application for managing train schedules with authentication and CRUD operations.
+A modern web application for managing train schedules with a beautiful UI and real-time updates. The application consists of a Next.js frontend and NestJS backend.
 
-## Tech Stack
+## Live Demo
 
-- Frontend:
-  - Next.js (React)
-  - TypeScript
-  - Tailwind CSS
-  - JWT Authentication
-
-- Backend:
-  - NestJS
-  - TypeScript
-  - PostgreSQL
-  - JWT Authentication
-
-## Project Structure
-
-```
-.
-├── frontend/     # Next.js application
-└── backend/      # NestJS application
-```
+- Frontend: [https://train-schedule-lmgc.vercel.app](https://train-schedule-lmgc.vercel.app)
+- Backend: [https://train-schedule-eta.vercel.app](https://train-schedule-eta.vercel.app)
 
 ## Features
 
-- User Authentication (Login/Register)
-- Train Schedule Management
-  - View schedules
-  - Add new schedules
-  - Edit existing schedules
-  - Delete schedules
+- User authentication and authorization
+- CRUD operations for train schedules
+- Real-time schedule updates
+- Responsive and modern UI
 - Search and filter functionality
-- Responsive design
+- Platform management
+- Active/Inactive schedule status
 
-## Getting Started
+## Tech Stack
 
-### Prerequisites
+### Frontend
+- Next.js 13+ (React framework)
+- TypeScript
+- Tailwind CSS for styling
+- Axios for API requests
+- React Icons
+- Date-fns for date formatting
 
-- Node.js (v18 or later)
-- PostgreSQL
+### Backend
+- NestJS (Node.js framework)
+- TypeScript
+- PostgreSQL with Prisma ORM
+- JWT for authentication
+- Swagger for API documentation
+
+## Prerequisites
+
+Before you begin, ensure you have installed:
+- Node.js (v16 or higher)
 - npm or yarn
+- PostgreSQL database
 
-### Backend Setup
+## Environment Setup
 
-1. Navigate to the backend directory:
+### Backend (.env)
+```
+DATABASE_URL="postgresql://username:password@localhost:5432/train_schedule"
+JWT_SECRET="your-jwt-secret"
+PORT=3001
+```
+
+### Frontend (.env.local)
+```
+NEXT_PUBLIC_API_URL="http://localhost:3001"
+```
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd train-schedule
+```
+
+2. Install backend dependencies:
 ```bash
 cd backend
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Create a `.env` file with your database and JWT configuration:
-```
-DATABASE_URL=postgresql://user:password@localhost:5432/train_schedule
-JWT_SECRET=your_jwt_secret
-```
-
-4. Run migrations:
-```bash
-npm run migration:run
-```
-
-5. Start the development server:
-```bash
-npm run start:dev
-```
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
+3. Install frontend dependencies:
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Create a `.env.local` file:
-```
-NEXT_PUBLIC_API_URL=http://localhost:3001
+## Database Setup
+
+1. Create a PostgreSQL database
+2. Update the DATABASE_URL in backend/.env
+3. Run migrations:
+```bash
+cd backend
+npx prisma migrate dev
 ```
 
-4. Start the development server:
+## Running the Application
+
+### Backend
 ```bash
+cd backend
+npm run start:dev
+```
+The backend will start on http://localhost:3001
+
+### Frontend
+```bash
+cd frontend
 npm run dev
 ```
+The frontend will start on http://localhost:3000
 
-## API Endpoints
+## API Documentation
 
-### Authentication
-- POST /auth/register - Register a new user
-- POST /auth/login - Login user
-
-### Train Schedules
-- GET /schedules - Get all schedules
-- GET /schedules/:id - Get specific schedule
-- POST /schedules - Create new schedule
-- PUT /schedules/:id - Update schedule
-- PATCH /schedules/:id - Partial update schedule
-- DELETE /schedules/:id - Delete schedule
+Once the backend is running, you can access the Swagger API documentation at:
+http://localhost:3001/api
 
 ## Deployment
 
-The application can be deployed to various cloud platforms:
-- Backend: Heroku, AWS, or similar
-- Frontend: Vercel (recommended for Next.js) or Netlify 
+The application is configured for deployment on Vercel:
+
+1. Frontend:
+   - Connect your GitHub repository to Vercel
+   - Set the environment variables
+   - Deploy from the main branch
+
+2. Backend:
+   - Connect your GitHub repository to Vercel
+   - Set the environment variables
+   - Configure the build settings
+   - Deploy from the main branch
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details 

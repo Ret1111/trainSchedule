@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import { FiMapPin, FiClock, FiHash, FiToggleRight, FiSave, FiX } from 'react-icons/fi';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const api = axios.create({
   baseURL: API_URL,
