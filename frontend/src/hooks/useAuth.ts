@@ -13,7 +13,7 @@ interface AuthState {
   token: string | null;
 }
 
-const API_URL = 'http://localhost:3001';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 // Create axios instance with default config
 const api = axios.create({
